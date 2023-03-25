@@ -5,7 +5,8 @@ import io.smallrye.mutiny.Multi;
 public class MultiApi {
 
     public static void main(String[] args) {
-        Multi<String> multi = Multi.createFrom().items("a", "b", "c", "d");
+        //Multi<UserProfile> users = this.users.getAllUsers();
+        Multi<String> multi = Multi.createFrom().items("amadeo", "balbuena", "constantine", "dinamarca");
         multi
                 .select().where(s -> s.length() > 3)
                 .onItem().transform(String::toUpperCase)
