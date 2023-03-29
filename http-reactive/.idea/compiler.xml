@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="resteasy-reactive-examples" />
+        <module name="reactive-score" />
+        <module name="resteasy-reactive-blocking-benchmark" />
+        <module name="resteasy-reactive-benchmark" />
+        <module name="mutiny-integration-examples" />
+        <module name="resteasy-classic-benchmark" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="chapter-8" target="1.5" />
+      <module name="mutiny-integration-examples" target="11" />
+      <module name="reactive-score" target="11" />
+      <module name="resteasy-classic-benchmark" target="11" />
+      <module name="resteasy-reactive-benchmark" target="11" />
+      <module name="resteasy-reactive-blocking-benchmark" target="11" />
+      <module name="resteasy-reactive-examples" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mutiny-integration-examples" options="-parameters" />
+      <module name="reactive-score" options="-parameters" />
+      <module name="resteasy-classic-benchmark" options="-parameters" />
+      <module name="resteasy-reactive-benchmark" options="-parameters" />
+      <module name="resteasy-reactive-blocking-benchmark" options="-parameters" />
+      <module name="resteasy-reactive-examples" options="-parameters" />
+    </option>
+  </component>
+</project>

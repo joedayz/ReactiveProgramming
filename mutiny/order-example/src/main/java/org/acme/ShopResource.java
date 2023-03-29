@@ -83,7 +83,7 @@ public class ShopResource {
     public Multi<Order> getOrdersPerUser() {
         return users.getAllUsers()
                 .onItem().transformToMultiAndConcatenate(user -> orders.getOrderForUser(user));
-
+        //onItem().transformToMultiAndMerge(user -> orders.getOrderForUser(user));
     }
 
     private static String capitalizeAllFirstLetter(String name) {
