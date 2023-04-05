@@ -3,6 +3,7 @@ package org.acme;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.file.FileSystemException;
 import io.vertx.mutiny.core.Vertx;
+import java.time.Duration;
 import org.jboss.resteasy.reactive.server.ServerExceptionMapper;
 
 import javax.inject.Inject;
@@ -21,7 +22,8 @@ public class MutinyExampleResource {
     @Path("/lorem")
     public Uni<String> getLoremIpsum() {
         return vertx.fileSystem().readFile("lorem.txt")
-                .onItem().transform(buffer -> buffer.toString("UTF-8"));
+                .onItem().transform(buffer -> buffer.toString("UTF-8"))
+            .ifNoItem().after(Duration.ofSeconds(1)).fail();
     }
 
     @GET
